@@ -274,8 +274,11 @@ void FramebufferWidget::render(math::Vec scale, math::Vec offsetF, math::Rect cl
 
 
 void FramebufferWidget::drawFramebuffer() {
+  // vg = nvgCreateRT(NVG_DEBUG, winWidth, winHeight);
 	NVGcontext* vg = APP->window->fbVg;
 	nvgSave(vg);
+
+  // nvgClearBackgroundRT(vg, 0.3f, 0.3f, 0.32f, 1.0f);
 
 	float pixelRatio = internal->fbSize.x * oversample / internal->fbBox.size.x;
 	nvgBeginFrame(vg, internal->fbBox.size.x, internal->fbBox.size.y, pixelRatio);
@@ -297,6 +300,9 @@ void FramebufferWidget::drawFramebuffer() {
 	// glClearColor(0.0, 1.0, 1.0, 0.5);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	nvgEndFrame(vg);
+
+  // unsigned char* rgba = nvgReadPixelsRT(vg);
+  // stbi_write_png("render.png",  winWidth, winHeight, 4, rgba, winWidth * 4);
 
 	// Clean up the NanoVG state so that calls to nvgTextBounds() etc during step() don't use a dirty state.
 	nvgReset(vg);
