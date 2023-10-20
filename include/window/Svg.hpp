@@ -39,6 +39,7 @@ inline math::Vec mm2px(math::Vec mm) {
 /** Scalable Vector Graphics document */
 struct Svg {
 	NSVGimage* handle = NULL;
+  std::string path;
 
 	~Svg();
 	/** Don't call this directly. Use `Svg::load()` for caching. */
