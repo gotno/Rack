@@ -607,6 +607,9 @@ struct AudioWidget : ModuleWidget {
 		TAudio* module = dynamic_cast<TAudio*>(this->module);
 
 		menu->addChild(new MenuSeparator);
+		appendAudioMenu(menu, module ? &module->port : NULL);
+
+		menu->addChild(new MenuSeparator);
 
 		menu->addChild(createBoolMenuItem("Master audio module", "",
 			[=]() {return module->port.isMaster();},
