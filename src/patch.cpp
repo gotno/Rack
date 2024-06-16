@@ -434,8 +434,8 @@ void Manager::revertDialog() {
 
 
 void Manager::pushRecentPath(std::string path) {
-  if (path.find(std::string("/template-racksim.vcv")) != std::string::npos) return;
-  if (path.find(std::string("/oscctrl-bootstrap.vcv")) != std::string::npos) return;
+  if (path.find(std::string("template-racksim.vcv")) != std::string::npos) return;
+  if (path.find(std::string("oscctrl-bootstrap.vcv")) != std::string::npos) return;
 
 	auto& recent = settings::recentPatchPaths;
 	// Remove path from recent patches (if exists)
