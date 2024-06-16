@@ -224,6 +224,11 @@ ifdef ARCH_WIN
 	cp /mingw64/bin/libstdc++-6.dll dist/"$(DIST_DIR)"/
 	cp /mingw64/bin/libgcc_s_seh-1.dll dist/"$(DIST_DIR)"/
 	cp plugins/Fundamental/dist/Fundamental-*.vcvplugin dist/"$(DIST_DIR)"/
+	# Make NSIS installer
+	# pacman -S mingw-w64-x86_64-nsis
+	# makensis -DVERSION_MAJOR="$(VERSION_MAJOR)" -DVERSION="$(VERSION)" "-XOutFile dist/$(DIST_NAME).exe" installer.nsi
+	cp -r dist/"$(DIST_DIR)" /c/VCV/UnrealBuild/osc3/Windows
+	cp -r dist/"$(DIST_DIR)" /c/VCV/UnrealBuild/osc3_dev/Windows
 endif
 
 
