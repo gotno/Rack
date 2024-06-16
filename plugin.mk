@@ -92,7 +92,11 @@ endif
 
 install: dist
 	mkdir -p "$(PLUGINS_DIR)"
-	cp dist/*.vcvplugin "$(PLUGINS_DIR)"/
+	cp dist/*.vcvplugin /c/VCV/rack-src/rack-gotno/plugins
+	cp dist/*.vcvplugin /c/VCV/UnrealBuild/osc3/Windows/Rack2Free
+	cp dist/*.vcvplugin /c/VCV/UnrealBuild/osc3_dev/Windows/Rack2Free
+	cp /c/VCV/UnrealBuild/oscctrl-bootstrap.vcv /c/VCV/UnrealBuild/osc3/Windows/Rack2Free/oscctrl-bootstrap.vcv
+	cp /c/VCV/UnrealBuild/oscctrl-bootstrap.vcv /c/VCV/UnrealBuild/osc3_dev/Windows/Rack2Free/oscctrl-bootstrap.vcv
 
 .PHONY: clean dist
 .DEFAULT_GOAL := all
