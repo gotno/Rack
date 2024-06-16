@@ -454,13 +454,15 @@ void Window::step() {
 	gamepad::step();
 
 	// Set window title
-	std::string windowTitle = APP_NAME + " " + APP_EDITION_NAME + " " + APP_VERSION;
-	if (APP->patch->path != "") {
-		windowTitle += " - ";
-		if (!APP->history->isSaved())
-			windowTitle += "*";
-		windowTitle += system::getFilename(APP->patch->path);
-	}
+	/* std::string windowTitle = APP_NAME + " " + APP_EDITION_NAME + " " + APP_VERSION; */
+	/* if (APP->patch->path != "") { */
+	/* 	windowTitle += " - "; */
+	/* 	if (!APP->history->isSaved()) */
+	/* 		windowTitle += "*"; */
+	/* 	windowTitle += system::getFilename(APP->patch->path); */
+	/* } */
+	std::string windowTitle = "RACK";
+
 	if (windowTitle != internal->lastWindowTitle) {
 		glfwSetWindowTitle(win, windowTitle.c_str());
 		internal->lastWindowTitle = windowTitle;
