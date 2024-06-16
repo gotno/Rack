@@ -30,7 +30,9 @@ struct Manager::Internal {
 Manager::Manager() {
 	internal = new Internal;
 
-	autosavePath = asset::user("autosave");
+	// autosavePath = asset::user("autosave");
+	/* autosavePath = asset::user("autosave-racksim"); */
+	autosavePath = rack::system::getWorkingDirectory() + "/autosave";
 
 	// Use a different temporary autosave dir when safe mode is enabled, to avoid altering normal autosave.
 	if (settings::safeMode) {
@@ -38,7 +40,8 @@ Manager::Manager() {
 		clearAutosave();
 	}
 
-	templatePath = asset::user("template.vcv");
+	/* templatePath = asset::user("template.vcv"); */
+	templatePath = rack::system::getWorkingDirectory() + "/template.vcv";
 	factoryTemplatePath = asset::system("template.vcv");
 }
 
