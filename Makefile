@@ -227,8 +227,8 @@ ifdef ARCH_WIN
 	# Make NSIS installer
 	# pacman -S mingw-w64-x86_64-nsis
 	# makensis -DVERSION_MAJOR="$(VERSION_MAJOR)" -DVERSION="$(VERSION)" "-XOutFile dist/$(DIST_NAME).exe" installer.nsi
-	cp -r dist/"$(DIST_DIR)" /c/VCV/UnrealBuild/osc3/Windows
-	cp -r dist/"$(DIST_DIR)" /c/VCV/UnrealBuild/osc3_dev/Windows
+	cp -r dist/"$(DIST_DIR)" /c/VCV/UnrealBuild/racksim/Windows
+	cp -r dist/"$(DIST_DIR)" /c/VCV/UnrealBuild/racksim_dev/Windows
 endif
 
 
