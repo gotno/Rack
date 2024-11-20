@@ -8,6 +8,9 @@
 *.d
 *.dSYM
 
+.ccls
+.ccls-cache/
+
 /Rack
 /dep
 /plugins
