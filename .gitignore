@@ -8,7 +8,6 @@
 *.d
 *.dSYM
 
-.ccls
 .ccls-cache/
 
 /Rack
